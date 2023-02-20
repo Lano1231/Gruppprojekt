@@ -26,7 +26,11 @@
       </li>
     </ul>
   </nav>
+
   <HelloWorld msg="kevin test test" />
+
+  <HelloWorld msg="Hello world:)" />
+
   <CitiesList />
   <CounterButton />
   <main>
