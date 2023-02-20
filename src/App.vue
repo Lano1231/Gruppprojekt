@@ -26,7 +26,7 @@
       </li>
     </ul>
   </nav>
-  <HelloWorld msg="Hallå eller" />
+  <HelloWorld msg="Hello world:)" />
   <CitiesList />
   <CounterButton />
   <main>
