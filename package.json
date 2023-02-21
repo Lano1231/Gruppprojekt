@@ -3,12 +3,19 @@
   "version": "6.1.0",
   "homepage": "https://mdbootstrap.com/docs/standard/",
   "license": "MIT",
+<<<<<<< HEAD
+  "dependencies": {
+    "firebase": "^9.17.1",
+    "vuefire": "^3.0.1"
+=======
   "devDependencies": {
+    "eslint-plugin-vue": "^9.9.0",
     "unplugin-vue-components": "^0.24.0"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "bootstrap-vue-next": "^0.7.3"
+>>>>>>> ef69bcd5caaa63247af9b29209641eb2878e88c7
   }
 }
