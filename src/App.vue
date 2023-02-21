@@ -29,6 +29,8 @@
 
   <HelloWorld msg="kevin test test" />
 
+  <HelloWorld msg=" Farah testing testing" />
+
   <HelloWorld msg="Hello world:)" />
 
   <CitiesList />
