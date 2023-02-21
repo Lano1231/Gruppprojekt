@@ -1,7 +1,0 @@
-.kvinna {
-  display: none;
-}
-
-.kvinna2:hover + .kvinna {
-  display: block;
-}
