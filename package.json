@@ -4,6 +4,7 @@
   "homepage": "https://mdbootstrap.com/docs/standard/",
   "license": "MIT",
   "devDependencies": {
+    "eslint-plugin-vue": "^9.9.0",
     "unplugin-vue-components": "^0.24.0"
   },
   "dependencies": {
