@@ -1,8 +1,18 @@
 <script>
   export default {
-    props: {
-      // eslint-disable-next-line vue/require-default-prop
-      msg: String
+    name: 'CounterButton',
+    data() {
+      return {
+        showManNav: false
+      }
+    },
+    methods: {
+      maleFunction() {
+        this.showManNav = !this.showManNav
+      },
+      kvinnaFunction() {
+        this.showManNav = false
+      }
     }
   }
 </script>
@@ -12,6 +22,7 @@
     font-weight: bold;
   }
 </style>
+
 <template>
   <header>
     <!--Main Navigation-->
@@ -49,14 +60,16 @@
       <!-- Container wrapper -->
     </nav>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white" v-show="showManNav">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white"
+      v-show="showManNav"
+    >
       <!-- Container wrapper -->
       <div class="container justify-content-center justify-content-md-between">
         <!-- Left links -->
         <ul class="navbar-nav flex-row">
           <li class="nav-item me-2 me-lg-0">
             <a
-
               role="button"
               data-mdb-toggle="sidenav"
               data-mdb-target="#sidenav-1"
@@ -85,21 +98,3 @@
     </nav>
   </header>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      showManNav: false,
-    };
-  },
-  methods: {
-    maleFunction() {
-      this.showManNav = !this.showManNav;
-    },
-    kvinnaFunction() {
-      this.showManNav = false;
-    },
-  },
-};
-</script>

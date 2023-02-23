@@ -59,7 +59,8 @@
                   placeholder="Sök efter artiklar"
                 />
                 <span class="input-group-text border-0 d-none d-lg-flex"
-                  ><i class="fas fa-search" /></span>
+                  ><i class="fas fa-search"
+                /></span>
               </form>
             </div>
             <!-- Center elements -->
@@ -135,5 +136,6 @@
           </div>
         </div>
       </div>
-    </header></div>
-    </template>
+    </header>
+  </div>
+</template>
