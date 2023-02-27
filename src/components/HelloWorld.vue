@@ -9,9 +9,11 @@
     methods: {
       maleFunction() {
         this.showManNav = !this.showManNav
+        this.showKviNav = false
       },
       kvinnaFunction() {
         this.showKviNav = !this.showKviNav
+        this.showManNav = false
       }
     }
   }
