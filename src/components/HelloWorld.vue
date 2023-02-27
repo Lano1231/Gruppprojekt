@@ -165,8 +165,10 @@
               @click="kvinnaFunction"
             >
               <i class="fas fa-bars me-1" />
-              <span>Nyheter</span>
             </a>
+          </li>
+          <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
+            <a class="nav-link" href="">Nyheter</a>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
             <a class="nav-link" href="">Kläder</a>
@@ -202,8 +204,10 @@
               @click="maleFunction"
             >
               <i class="fas fa-bars me-1" />
-              <span>Nyheter</span>
             </a>
+          </li>
+          <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
+            <a class="nav-link" href="">Nyheter</a>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
             <a class="nav-link" href="">Kläder</a>
