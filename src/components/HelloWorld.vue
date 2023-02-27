@@ -2,7 +2,8 @@
   export default {
     data() {
       return {
-        showManNav: false
+        showManNav: false,
+        showKviNav: false
       }
     },
     methods: {
@@ -10,7 +11,7 @@
         this.showManNav = !this.showManNav
       },
       kvinnaFunction() {
-        this.showManNav = false
+        this.showKviNav = !this.showKviNav
       }
     }
   }
@@ -143,7 +144,10 @@
   </div>
   <header>
     <!--Main Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white"
+      v-show="showKviNav"
+    >
       <!-- Container wrapper -->
       <div class="container justify-content-center justify-content-md-between">
         <!-- Left links -->
