@@ -15,15 +15,10 @@
 
 <template>
   <HelloWorld />
-  <ShowName msg="Hello World!" />
+  <ShowName />
 
-  <HelloWorld msg="Hello world:)" />
-
-  <CounterButton />
   <LandPage />
   <main>
     <RouterView />
   </main>
-
-  <CounterButton />
 </template>
