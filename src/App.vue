@@ -1,17 +1,16 @@
 <script>
-  import CounterButton from './components/CounterButton.vue'
   import HelloWorld from './components/HelloWorld.vue'
+  import ShowName from './components/ShowName.vue'
 
   export default {
     components: {
-      CounterButton,
-      HelloWorld
+      HelloWorld,
+      ShowName
     }
   }
 </script>
 
 <template>
-  <HelloWorld msg="Hello world:)" />
-
-  <CounterButton />
+  <HelloWorld />
+  <ShowName msg="Hello World!" />
 </template>
