@@ -12,14 +12,7 @@
     <!-- position: relative; på föräldern. position: absolute; på barnet ("containing block") -->
     <b-row class="g-0">
       <b-col style="display: flex; position: relative">
-        <div
-          style="
-            position: absolute;
-            display: flex;
-            align-self: center;
-            padding: 90%;
-          "
-        >
+        <div style="position: absolute; display: flex; align-self: center">
           <button>Herr</button>
         </div>
         <b-img

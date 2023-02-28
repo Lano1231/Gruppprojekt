@@ -9,6 +9,7 @@
     },
     methods: {
       maleFunction() {
+        console.log('hej')
         this.showManNav = !this.showManNav
         this.showKviNav = false
       },
