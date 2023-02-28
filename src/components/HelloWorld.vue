@@ -3,7 +3,8 @@
     data() {
       return {
         showManNav: false,
-        showKviNav: false
+        showKviNav: false,
+        showLogNav: false
       }
     },
     methods: {
@@ -14,6 +15,9 @@
       kvinnaFunction() {
         this.showKviNav = !this.showKviNav
         this.showManNav = false
+      },
+      navFunction() {
+        this.showLogNav = !this.showLogNav
       }
     }
   }
@@ -118,6 +122,7 @@
                     role="button"
                     data-mdb-toggle="dropdown"
                     aria-expanded="false"
+                    @click="navFunction"
                   >
                     <img
                       src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
@@ -131,7 +136,9 @@
                     class="dropdown-menu dropdown-menu-end"
                     aria-labelledby="navbarDropdownMenuLink"
                   >
-                    <li><a class="dropdown-item" href="#">My profile</a></li>
+                    <li v-show="showLogNav">
+                      <a class="dropdown-item" href="#">My profile</a>
+                    </li>
                     <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Logout</a></li>
                   </ul>
@@ -210,7 +217,7 @@
             <a class="nav-link" href="">Nyheter</a>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="">Kläder</a>
+            <RouterLink class="nav-link" to="/clothes">Jackor</RouterLink>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
             <a class="nav-link" href="">Jeans</a>
