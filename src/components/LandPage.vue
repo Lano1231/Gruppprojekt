@@ -28,7 +28,7 @@
             position: absolute;
             display: flex;
             align-self: center;
-            padding: 4%;
+            padding: 5%;
           "
         >
           <button>Dam</button>
