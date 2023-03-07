@@ -162,7 +162,7 @@
             </a>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="">Nyheter</a>
+            <RouterLink class="nav-link" to="/Womensjackets">Jackor</RouterLink>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
             <RouterLink class="nav-link" to="/Womensjeans">Jeans</RouterLink>
@@ -173,7 +173,7 @@
             >
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="">Skor</a>
+            <RouterLink class="nav-link" to="/skor">Skor</RouterLink>
           </li>
         </ul>
         <!-- Left links -->
