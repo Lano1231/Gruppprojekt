@@ -15,10 +15,10 @@
 
 <template>
   <HelloWorld />
-  <ShowName />
-
-  <LandPage />
   <main>
     <RouterView />
   </main>
+  <ShowName />
+
+  <LandPage />
 </template>

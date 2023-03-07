@@ -9,6 +9,7 @@
     },
     methods: {
       maleFunction() {
+        console.log('hej')
         this.showManNav = !this.showManNav
         this.showKviNav = false
       },
@@ -214,16 +215,18 @@
             </a>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="">Nyheter</a>
+            <RouterLink class="nav-link" to="/shirts">Skjortor</RouterLink>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <RouterLink class="nav-link" to="/clothes">Jackor</RouterLink>
+            <RouterLink class="nav-link" to="/jackets">Jackor</RouterLink>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="">Jeans</a>
+            <RouterLink class="nav-link" to="/jeans">Jeans</RouterLink>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="">Skor</a>
+            <RouterLink class="nav-link" to="/tracksuits"
+              >Träningsoveraller</RouterLink
+            >
           </li>
         </ul>
         <!-- Left links -->
