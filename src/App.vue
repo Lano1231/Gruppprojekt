@@ -5,6 +5,11 @@
   import ShowName from './components/ShowName.vue'
 
   export default {
+    data: () => {
+      return {
+        mobileView: true
+      }
+    },
     components: {
       HelloWorld,
       LandPage,
@@ -15,10 +20,12 @@
 
 <template>
   <HelloWorld />
+
   <main>
     <RouterView />
   </main>
+
   <ShowName />
 
-  <LandPage />
+  <LandPage v-if="!mobileView" />
 </template>
