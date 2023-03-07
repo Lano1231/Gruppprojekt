@@ -5,7 +5,7 @@
       <b-col cols="3" v-for="product in products" :key="product.name">
         <b-img :src="product.image" fluid alt="responsive image" />
         <p>{{ product.name }}</p>
-        <p>{{ product.cost }}</p>
+        <p>{{ product.price }}</p>
         <button class="btn-primary btn" @click="addItemToCart(product)">
           Add to cart
         </button></b-col
