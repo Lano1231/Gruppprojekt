@@ -18,7 +18,7 @@
         <b-img
           class="flex-grow-1 object-fit-cover"
           fluid-grow
-          src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTKO88cBrOUKw7-3RmDkkeaiGlGZ9twdy40bIjSHpQMdzGexY1q"
+          src="https://images.unsplash.com/photo-1677442992191-33e64435ad7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80"
           alt="men image"
         />
       </b-col>
@@ -28,7 +28,7 @@
             position: absolute;
             display: flex;
             align-self: center;
-            padding: 4%;
+            padding: 5%;
           "
         >
           <button>Dam</button>
@@ -36,7 +36,7 @@
         <b-img
           class="flex-grow-1 object-fit-cover"
           fluid-grow
-          src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSK3UceI4uNF7c6VTQNDysmktTKInWfT0FvDQhdK8OCyTgJQRcD"
+          src="https://images.unsplash.com/photo-1677131619099-1f9615ab1610?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=434&q=80"
           alt="women image"
         />
       </b-col>

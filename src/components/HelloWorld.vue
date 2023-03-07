@@ -82,68 +82,51 @@
             >
               <div class="d-flex">
                 <!-- Cart -->
-                <a class="text-reset me-3" href="#">
-                  <span><i class="fas fa-shopping-cart" /></span>
-                  <span class="badge rounded-pill badge-notification bg-danger"
-                    >1</span
+                <div>
+                  <b-dropdown
+                    size="lg"
+                    variant="link"
+                    toggle-class="text-decoration-none"
+                    no-caret
                   >
-                </a>
+                    <template #button-content>
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+                        height="22"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </template>
+                    <b-dropdown-item href="#">My cart</b-dropdown-item>
+                    <b-dropdown-item href="#">Checkout</b-dropdown-item>
+                  </b-dropdown>
+                </div>
+
+                <div>
+                  <b-dropdown
+                    size="lg"
+                    variant="link"
+                    toggle-class="text-decoration-none"
+                    no-caret
+                  >
+                    <template #button-content>
+                      <img
+                        src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                        class="rounded-circle"
+                        height="22"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </template>
+                    <b-dropdown-item href="#">My profile</b-dropdown-item>
+                    <b-dropdown-item href="#">Settings</b-dropdown-item>
+                    <b-dropdown-item href="#">Logout</b-dropdown-item>
+                  </b-dropdown>
+                </div>
 
                 <!-- Notification -->
-                <div class="dropdown">
-                  <a
-                    class="text-reset me-3 dropdown-toggle hidden-arrow"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    @click="showNotifications = !showNotifications"
-                    aria-expanded="false"
-                  >
-                    <i class="fas fa-bell" />
-                  </a>
-                  <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    v-if="showNotifications"
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
-                    <li><a class="dropdown-item" href="#">Some news</a></li>
-                    <li><a class="dropdown-item" href="#">Another news</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </div>
 
                 <!-- User -->
-                <div class="dropdown">
-                  <a
-                    class="text-reset dropdown-toggle d-flex align-items-center hidden-arrow"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                    @click="navFunction"
-                  >
-                    <img
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
-                      class="rounded-circle"
-                      height="22"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </a>
-                  <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
-                    <li v-show="showLogNav">
-                      <a class="dropdown-item" href="#">My profile</a>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Logout</a></li>
-                  </ul>
-                </div>
               </div>
             </div>
             <!-- Right elements -->
