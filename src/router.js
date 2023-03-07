@@ -1,18 +1,24 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import AboutView from './views/AboutView.vue'
+import WomenClothesView from './views/WomenClothesView.vue'
 import ContactView from './views/ContactView.vue'
 import HomeView from './views/HomeView.vue'
 import ShirtView from './views/ShirtView.vue'
 import JeansView from './views/JeansView.vue'
+import WomensJeansView from './views/WomensJeansView.vue'
+
 import TracksuitView from './views/TracksuitView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      component: AboutView,
-      path: '/about'
+      component: WomenClothesView,
+      path: '/klänningar'
+    },
+    {
+      component: WomensJeansView,
+      path: '/jeans'
     },
     {
       component: ContactView,
