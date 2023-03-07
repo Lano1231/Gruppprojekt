@@ -6,12 +6,22 @@ import HomeView from './views/HomeView.vue'
 import ShirtView from './views/ShirtView.vue'
 import JeansView from './views/JeansView.vue'
 import WomensJeansView from './views/WomensJeansView.vue'
+import WomensJacketsView from './views/WomensJacketsView.vue'
+import WomenShoesView from './views/WomenShoesView.vue'
 
 import TracksuitView from './views/TracksuitView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
   routes: [
+    {
+      component: WomenShoesView,
+      path: '/skor'
+    },
+    {
+      component: WomensJacketsView,
+      path: '/womensjackets'
+    },
     {
       component: WomenClothesView,
       path: '/klänningar'
