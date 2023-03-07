@@ -96,7 +96,9 @@
                         alt=""
                         loading="lazy"
                       />
-                      <b-badge pill variant="danger">1</b-badge>
+                      <b-badge style="font-size: 10px" pill variant="danger"
+                        >1</b-badge
+                      >
                     </template>
                     <b-dropdown-item href="#">My cart</b-dropdown-item>
                     <b-dropdown-item href="#">Checkout</b-dropdown-item>
