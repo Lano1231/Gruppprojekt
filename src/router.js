@@ -18,7 +18,7 @@ export default createRouter({
     },
     {
       component: WomensJeansView,
-      path: '/jeans'
+      path: '/WomensJeans'
     },
     {
       component: ContactView,

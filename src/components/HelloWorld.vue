@@ -162,7 +162,7 @@
             <a class="nav-link" href="">Nyheter</a>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <RouterLink class="nav-link" to="/jeans">Jeans</RouterLink>
+            <RouterLink class="nav-link" to="/Womensjeans">Jeans</RouterLink>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
             <RouterLink class="nav-link" to="/klänningar"
