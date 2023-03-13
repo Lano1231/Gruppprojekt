@@ -77,6 +77,7 @@
             <!-- Center elements -->
 
             <!-- Right elements -->
+
             <div
               class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center"
             >
@@ -100,6 +101,7 @@
                         >1</b-badge
                       >
                     </template>
+
                     <b-dropdown-item href="#">My cart</b-dropdown-item>
                     <b-dropdown-item href="#">Checkout</b-dropdown-item>
                   </b-dropdown>
@@ -121,7 +123,7 @@
                         loading="lazy"
                       />
                     </template>
-                    <b-dropdown-item href="#">My profile</b-dropdown-item>
+                    <b-dropdown-item :to="'/login'">My profile</b-dropdown-item>
                     <b-dropdown-item href="#">Settings</b-dropdown-item>
                     <b-dropdown-item href="#">Logout</b-dropdown-item>
                   </b-dropdown>
