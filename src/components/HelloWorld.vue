@@ -77,6 +77,7 @@
             <!-- Center elements -->
 
             <!-- Right elements -->
+
             <div
               class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center"
             >
@@ -96,7 +97,11 @@
                         alt=""
                         loading="lazy"
                       />
+                      <b-badge style="font-size: 10px" pill variant="danger"
+                        >1</b-badge
+                      >
                     </template>
+
                     <b-dropdown-item href="#">My cart</b-dropdown-item>
                     <b-dropdown-item href="#">Checkout</b-dropdown-item>
                   </b-dropdown>
@@ -118,7 +123,7 @@
                         loading="lazy"
                       />
                     </template>
-                    <b-dropdown-item href="#">My profile</b-dropdown-item>
+                    <b-dropdown-item :to="'/login'">My profile</b-dropdown-item>
                     <b-dropdown-item href="#">Settings</b-dropdown-item>
                     <b-dropdown-item href="#">Logout</b-dropdown-item>
                   </b-dropdown>
@@ -159,16 +164,18 @@
             </a>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="">Nyheter</a>
+            <RouterLink class="nav-link" to="/Womensjackets">Jackor</RouterLink>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="">Kläder</a>
+            <RouterLink class="nav-link" to="/Womensjeans">Jeans</RouterLink>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="">Klänningar</a>
+            <RouterLink class="nav-link" to="/klänningar"
+              >Klänningar</RouterLink
+            >
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="">Skor</a>
+            <RouterLink class="nav-link" to="/skor">Skor</RouterLink>
           </li>
         </ul>
         <!-- Left links -->
