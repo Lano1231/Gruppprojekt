@@ -70,9 +70,7 @@
                   class="form-control rounded"
                   placeholder="Sök efter artiklar"
                 />
-                <span class="input-group-text border-0 d-none d-lg-flex"
-                  ><i class="fas fa-search"
-                /></span>
+                <b-button squared variant="outline-secondary">Sök</b-button>
               </form>
             </div>
             <!-- Center elements -->
