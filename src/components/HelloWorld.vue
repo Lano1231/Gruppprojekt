@@ -28,6 +28,7 @@
     <!--Main Navigation-->
     <header>
       <!-- Jumbotron -->
+
       <div class="p-3 text-center bg-white border-bottom">
         <div class="container">
           <div class="row">
@@ -230,7 +231,11 @@
         </ul>
         <!-- Left links -->
       </div>
+
       <!-- Container wrapper -->
     </nav>
   </header>
+  <div v-if="$route.path === '/!'">
+    <LandPage />
+  </div>
 </template>
