@@ -3,6 +3,11 @@
   import ShowName from './components/ShowName.vue'
 
   export default {
+    data: () => {
+      return {
+        mobileView: true
+      }
+    },
     components: {
       HelloWorld,
       ShowName
@@ -12,8 +17,12 @@
 
 <template>
   <HelloWorld />
+
   <main>
     <RouterView />
   </main>
+
   <ShowName />
+
+  <LandPage v-if="!mobileView" />
 </template>

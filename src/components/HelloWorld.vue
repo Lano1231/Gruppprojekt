@@ -9,7 +9,6 @@
     },
     methods: {
       maleFunction() {
-        console.log('hej')
         this.showManNav = !this.showManNav
         this.showKviNav = false
       },
@@ -45,7 +44,12 @@
               >
                 <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
                   <a class="nav-link" id="hover-man">
-                    <button @click="maleFunction()">Man</button>
+                    <b-button
+                      @click="maleFunction()"
+                      pill
+                      variant="outline-secondary"
+                      >Man</b-button
+                    >
                   </a>
                 </li>
               </div>
@@ -54,7 +58,12 @@
               >
                 <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
                   <a class="nav-link" id="hover-kvinna">
-                    <button @click="kvinnaFunction()">Kvinna</button>
+                    <b-button
+                      @click="kvinnaFunction()"
+                      pill
+                      variant="outline-secondary"
+                      >Kvinna</b-button
+                    >
                   </a>
                 </li>
               </div>
