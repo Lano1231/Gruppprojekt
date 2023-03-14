@@ -9,9 +9,9 @@
     "bootstrap-vue-next": "^0.7.3",
     "firebase": "^9.17.1",
     "vue": "^3.2.45",
-    "vuefire": "^3.0.1",
     "vue-router": "^4.1.6",
-    "vuex": "^4.1.0"
+    "vuefire": "^3.0.1",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
