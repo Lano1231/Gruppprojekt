@@ -1,6 +1,4 @@
 <script>
-  import LandPage from './components/LandPage.vue'
-
   import HelloWorld from './components/HelloWorld.vue'
   import ShowName from './components/ShowName.vue'
 
@@ -13,7 +11,6 @@
     },
     components: {
       HelloWorld,
-      LandPage,
       ShowName
     }
   }

@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
+import LandPage from './components/LandPage.vue'
 import WomenClothesView from './views/WomenClothesView.vue'
 import ContactView from './views/ContactView.vue'
 import HomeView from './views/HomeView.vue'
@@ -54,6 +55,10 @@ export default createRouter({
     {
       component: LoginView,
       path: '/login'
+    },
+    {
+      component: LandPage,
+      path: '/landpage'
     }
   ]
 })
