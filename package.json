@@ -8,9 +8,10 @@
     "bootstrap": "^5.2.3",
     "bootstrap-vue-next": "^0.7.3",
     "firebase": "^9.17.1",
+    "sass": "^1.58.3",
     "vue": "^3.2.45",
-    "vuefire": "^3.0.1",
     "vue-router": "^4.1.6",
+    "vuefire": "^3.0.1",
     "vuex": "^4.1.0"
   },
   "devDependencies": {
