@@ -523,7 +523,7 @@ const store = createStore({
         image:
           'https://marketplace-images.asos.com/user/951984d8-dbae-4e89-9f88-041deceef6b2_large.jpg'
       },
-
+   
     ],
 
 

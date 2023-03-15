@@ -6,7 +6,7 @@
         <b-img :src="product.image" fluid alt="responsive image" />
         <p>{{ product.name }}</p>
         <p>{{ product.cost }}</p>
-        <button class="btn-primary btn" @click="addItemToCart(product)">
+        <button class="btn-primary btn" @click="addProduct(product)">
           Add to cart
         </button></b-col
       >
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import { mapGetters } from 'Vuex'
+  import { mapGetters } from 'vuex'
   export default {
     data() {
       return {}},
