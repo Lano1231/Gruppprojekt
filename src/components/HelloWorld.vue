@@ -1,7 +1,7 @@
 <script>
-import VaruKorg from "./VaruKorg.vue"
+  import VaruKorg from './VaruKorg.vue'
   export default {
-    components: {VaruKorg},
+    components: { VaruKorg },
     data() {
       return {
         showManNav: false,
@@ -26,12 +26,12 @@ import VaruKorg from "./VaruKorg.vue"
 </script>
 
 <template>
-  <div class="bg-dark">
+  <div>
     <!--Main Navigation-->
     <header>
       <!-- Jumbotron -->
 
-      <div class="p-3 text-center bg-dark border-bottom">
+      <div class="p-3 text-center bg-light border-bottom">
         <div class="container">
           <div class="row">
             <!-- Left elements -->
@@ -91,7 +91,7 @@ import VaruKorg from "./VaruKorg.vue"
             <div
               class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center"
             >
-            <div class="d-flex">
+              <div class="d-flex">
                 <!-- Cart -->
                 <div @click="$event.stopPropagation()">
                   <b-dropdown
@@ -111,11 +111,11 @@ import VaruKorg from "./VaruKorg.vue"
                         >1</b-badge
                       >
                     </template>
-<div @click="$event.stopPropagation()">
-  <VaruKorg />
-</div>
+                    <div @click="$event.stopPropagation()">
+                      <VaruKorg />
+                    </div>
                   </b-dropdown>
-                  </div>
+                </div>
 
                 <div>
                   <b-dropdown
