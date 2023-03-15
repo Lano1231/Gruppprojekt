@@ -8,13 +8,11 @@
 </script>
 
 <template>
-  <div class="container">
+  <div class="container bg-dark">
     <!-- position: relative; på föräldern. position: absolute; på barnet ("containing block") -->
     <b-row class="g-0">
       <b-col style="display: flex; position: relative">
-        <div style="position: absolute; display: flex; align-self: center">
-          <button>Herr</button>
-        </div>
+        <div style="position: absolute; display: flex; align-self: center" />
         <b-img
           class="flex-grow-1 object-fit-cover"
           fluid-grow
@@ -30,9 +28,7 @@
             align-self: center;
             padding: 5%;
           "
-        >
-          <button>Dam</button>
-        </div>
+        />
         <b-img
           class="flex-grow-1 object-fit-cover"
           fluid-grow
@@ -47,4 +43,64 @@
 
     </div> -->
   </div>
+
+  <div>
+    <b-container>
+      <div>
+        <div
+          class="parallax"
+          style="
+            background-image: url('https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/02/13/09/IMG-3856-1.jpg?width=1300');
+          "
+        >
+          <div class="parallax-text">
+            <h1 bold>
+              Sell-IT is a website dedicated to vintage clothing for men and
+              women
+            </h1>
+          </div>
+        </div>
+      </div>
+    </b-container>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>About Us</h4>
+          <p>
+            We are a vintage clothing store dedicated to providing high-quality
+            clothing for men and women.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h4>Contact Us</h4>
+          <p>Email: contact@sellit.com</p>
+          <p>Phone: 555-555-5555</p>
+          <p>Address: 123 Main St, Anytown USA</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
+
+<style>
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+  }
+
+  .parallax-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+  }
+</style>

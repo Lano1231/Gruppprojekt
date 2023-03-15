@@ -24,12 +24,12 @@
 </script>
 
 <template>
-  <div>
+  <div class="bg-dark">
     <!--Main Navigation-->
     <header>
       <!-- Jumbotron -->
 
-      <div class="p-3 text-center bg-white border-bottom">
+      <div class="p-3 text-center bg-dark border-bottom">
         <div class="container">
           <div class="row">
             <!-- Left elements -->
@@ -151,7 +151,7 @@
   <header>
     <!--Main Navigation-->
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-white"
+      class="navbar navbar-expand-lg navbar-light bg-light"
       v-show="showKviNav"
     >
       <!-- Container wrapper -->
