@@ -1,5 +1,7 @@
 <script>
+import VaruKorg from "./VaruKorg.vue"
   export default {
+    components: {VaruKorg},
     data() {
       return {
         showManNav: false,
@@ -89,9 +91,9 @@
             <div
               class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center"
             >
-              <div class="d-flex">
+            <div class="d-flex">
                 <!-- Cart -->
-                <div>
+                <div @click="$event.stopPropagation()">
                   <b-dropdown
                     size="lg"
                     variant="link"
@@ -109,11 +111,11 @@
                         >1</b-badge
                       >
                     </template>
-
-                    <b-dropdown-item href="#">My cart</b-dropdown-item>
-                    <b-dropdown-item href="#">Checkout</b-dropdown-item>
+<div @click="$event.stopPropagation()">
+  <VaruKorg />
+</div>
                   </b-dropdown>
-                </div>
+                  </div>
 
                 <div>
                   <b-dropdown
