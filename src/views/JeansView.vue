@@ -12,6 +12,25 @@
       </b-col>
     </b-row>
   </b-container>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>About Us</h4>
+          <p>
+            We are a vintage clothing store dedicated to providing high-quality
+            clothing for men and women.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h4>Contact Us</h4>
+          <p>Email: contact@sellit.com</p>
+          <p>Phone: 555-555-5555</p>
+          <p>Address: 123 Main St, Anytown USA</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script>
