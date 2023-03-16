@@ -98,7 +98,7 @@ import { mapGetters } from 'vuex';
                 <img src="Logo.png" height="35" />
               </a>
               <div
-                class="Man col-md-3 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
+              @click="$event.stopPropagation()" class="Man col-md-3 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
               >
                 <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
                   <a class="nav-link" id="hover-man">
@@ -112,7 +112,7 @@ import { mapGetters } from 'vuex';
                 </li>
               </div>
               <div
-                class="col-md-2 w-auto my-autocol-md-1 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
+              @click="$event.stopPropagation()" class="col-md-2 w-auto my-autocol-md-1 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
               >
                 <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
                   <a class="nav-link" id="hover-kvinna">
@@ -129,7 +129,7 @@ import { mapGetters } from 'vuex';
 
 
             <div class="col-md-4 position-relative">
-  <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0" @submit.prevent="searchCategory">
+  <form @click="$event.stopPropagation()" class="d-flex input-group w-auto my-auto mb-3 mb-md-0" @submit.prevent="searchCategory">
     <input
       autocomplete="off"
       type="search"
@@ -217,7 +217,7 @@ import { mapGetters } from 'vuex';
 
       <div class="container justify-content-center justify-content-md-between">
 
-        <ul class="navbar-nav flex-row">
+        <ul class="navbar-nav flex-row" @click="$event.stopPropagation()">
           <li class="nav-item me-2 me-lg-0">
             <a
               role="button"
@@ -258,7 +258,7 @@ import { mapGetters } from 'vuex';
 
       <div class="container justify-content-center justify-content-md-between">
 
-        <ul class="navbar-nav flex-row">
+        <ul class="navbar-nav flex-row" @click="$event.stopPropagation()">
           <li class="nav-item me-2 me-lg-0">
             <a
               role="button"

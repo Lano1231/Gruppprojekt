@@ -1,6 +1,6 @@
 <template>
   <h1 class="text-center">Jeans (Man)</h1>
-  <b-container class="bv-example-row bv-example-row-flex-cols">
+  <b-container class="bv-example-row bv-example-row-flex-cols" @click="$event.stopPropagation()">
     <b-row class="text-center products" align-v="stretch">
       <b-col cols="3" v-for="product in JeansProducts" :key="product.id">
         <b-img :src="product.image" fluid alt="responsive image" />
