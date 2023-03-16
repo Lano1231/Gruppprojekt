@@ -1,4 +1,5 @@
-<template> // referens kassa: https://getbootstrap.com/docs/4.5/examples/checkout/
+<!-- referens kassa: https://getbootstrap.com/docs/4.5/examples/checkout/ -->
+<template>
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"

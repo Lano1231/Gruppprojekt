@@ -79,8 +79,8 @@
     }
   }
 </script>
-
-<template> // Referens Navbar : https://mdbootstrap.com/docs/standard/navigation/navbar/
+<!-- Referens Navbar : https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
+<template>
   <div class="bg-dark">
     <header>
       <div class="p-3 text-center bg-light border-bottom">
