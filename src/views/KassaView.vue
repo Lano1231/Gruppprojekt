@@ -9,6 +9,7 @@
   <div class="container">
     <div class="container">
       <div class="py-5 text-center">
+        <a href="#!">
         <img
           class="d-block mx-auto mb-4"
           src="logo.png"
@@ -16,6 +17,7 @@
           width="200"
           height="72"
         />
+      </a>
         <h2>Kassa</h2>
       </div>
       <div class="row">
