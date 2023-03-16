@@ -13,7 +13,7 @@
     >
       <b-row class="text-center products" align-v="stretch">
         <b-col
-          cols="3"
+          cols="6"
           v-for="product in WomensJacketsProducts"
           :key="product.id"
         >

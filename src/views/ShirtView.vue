@@ -12,7 +12,7 @@
       @click="$event.stopPropagation()"
     >
       <b-row class="text-center products" align-v="stretch">
-        <b-col cols="3" v-for="product in ShirtsProducts" :key="product.id">
+        <b-col cols="6" v-for="product in ShirtsProducts" :key="product.id">
           <b-img :src="product.image" fluid alt="responsive image" />
           <p>{{ product.name }}</p>
           <p>{{ product.cost }} kr</p>
