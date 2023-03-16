@@ -21,23 +21,69 @@
         >
       </b-row>
     </b-container>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h4>Om oss</h4>
-            <p>
-              Vi är en vintageklädbutik som är dedikerad till att tillhandahålla
-              hög kvalitet kläder för män och kvinnor.
-            </p>
-          </div>
-          <div class="col-md-6">
-            <h4>Kontakta oss</h4>
-            <p>E-post: contact@sellit.com</p>
-            <p>Telefon: 555-555-5555</p>
-            <p>Adress: 123 Main St, Anytown USA</p>
-          </div>
-        </div>
+    <footer class="bg-light text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #3b5998"
+            href="#!"
+            role="button"
+            ><i class="fab fa-facebook-f"
+          /></a>
+
+          <!-- Twitter -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #55acee"
+            href="#!"
+            role="button"
+            ><i class="fab fa-twitter"
+          /></a>
+
+          <!-- Google -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #dd4b39"
+            href="#!"
+            role="button"
+            ><i class="fab fa-google"
+          /></a>
+
+          <!-- Instagram -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #ac2bac"
+            href="#!"
+            role="button"
+            ><i class="fab fa-instagram"
+          /></a>
+
+          <!-- Linkedin -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #0082ca"
+            href="#!"
+            role="button"
+            ><i class="fab fa-linkedin-in"
+          /></a>
+          <!-- Github -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #333333"
+            href="#!"
+            role="button"
+            ><i class="fab fa-github"
+          /></a>
+        </section>
+      </div>
+      <!-- Grid container -->
+
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2)">
+        Sell-IT vintage clothing
       </div>
     </footer>
   </div>
