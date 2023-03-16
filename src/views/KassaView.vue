@@ -142,7 +142,7 @@
                         <div class="invalid-feedback"> Säkerhetskoden är nödvändig.
                 </div>
                 <hr class="mb-4" />
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Betala för dina produkter!</button>
+                <button class="btn btn-success btn-lg btn-block" type="submit">Betala för dina produkter!</button>
             </div></div>
           </form>
         </div>

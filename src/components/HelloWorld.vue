@@ -13,7 +13,7 @@ import { mapGetters } from 'vuex';
         'jeans för män',
         'jackor för män',
         'skjortor för män',
-        'träningsoverall för mön',
+        'träningsoverall för män',
         'klänningar för kvinnor',
         'skor för kvinnor',
         'jackor för kvinnor',
