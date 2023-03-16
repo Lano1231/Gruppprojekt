@@ -140,7 +140,7 @@ import { mapGetters } from 'vuex';
     />
     <div v-if="showDropdown && filteredCategories.length" class="search-dropdown">
       <ul class="list-group">
-        <li class="list-group-item" v-for="category in filteredCategories" @click="selectCategory(category)">
+        <li class="list-group-item" style="cursor: pointer;" v-for="category in filteredCategories" @click="selectCategory(category)">
           {{ category }}
         </li>
       </ul>
