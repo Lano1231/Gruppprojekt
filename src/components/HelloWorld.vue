@@ -1,8 +1,8 @@
 <script>
-import VaruKorg from "./VaruKorg.vue";
-import { mapGetters } from 'vuex';
+  import VaruKorg from './VaruKorg.vue'
+  import { mapGetters } from 'vuex'
   export default {
-    components: {VaruKorg},
+    components: { VaruKorg },
     data() {
       return {
         showManNav: false,
@@ -10,61 +10,60 @@ import { mapGetters } from 'vuex';
         showLogNav: false,
         searchQuery: '',
         categories: [
-        'jeans för män',
-        'jackor för män',
-        'skjortor för män',
-        'träningsoverall för män',
-        'klänningar för kvinnor',
-        'skor för kvinnor',
-        'jackor för kvinnor',
-        'jeans för kvinnor'
-      ],
-      showDropdown: false,
-      filteredCategories: []
-    }
-  },
-  computed: {
-    ...mapGetters(['cart', 'total', 'cartCount'])
-  },
-  methods: {
-    searchCategory() {
-      const query = this.searchQuery.toLowerCase()
-      if (query === 'jeans för män') {
-        this.$router.push('/jeans')
-      } else if (query === 'jackor för män') {
-        this.$router.push('/jackets')
-      } else if (query === 'skjortor för män') {
-        this.$router.push('/shirts')
-      } else if (query === 'träningsoverall för män') {
-        this.$router.push('/tracksuits')
-      } else if (query === 'klänningar för kvinnor') {
-        this.$router.push('/klänningar')
-      } else if (query === 'skor för kvinnor') {
-        this.$router.push('/skor')
-      } else if (query === 'jackor för kvinnor') {
-        this.$router.push('/womensjackets')
-      } else if (query === 'jeans för kvinnor') {
-        this.$router.push('/womensjeans')
-      }
-      else {
-        console.log('Category not found')
+          'jeans för män',
+          'jackor för män',
+          'skjortor för män',
+          'träningsoverall för män',
+          'klänningar för kvinnor',
+          'skor för kvinnor',
+          'jackor för kvinnor',
+          'jeans för kvinnor'
+        ],
+        showDropdown: false,
+        filteredCategories: []
       }
     },
-    updateDropdown() {
-      if (this.searchQuery.length > 0) {
-        this.showDropdown = true
-        this.filteredCategories = this.categories.filter(category => category.toLowerCase().includes(this.searchQuery.toLowerCase()))
-      } else {
+    computed: {
+      ...mapGetters(['cart', 'total', 'cartCount'])
+    },
+    methods: {
+      searchCategory() {
+        const query = this.searchQuery.toLowerCase()
+        if (query === 'jeans för män') {
+          this.$router.push('/jeans')
+        } else if (query === 'jackor för män') {
+          this.$router.push('/jackets')
+        } else if (query === 'skjortor för män') {
+          this.$router.push('/shirts')
+        } else if (query === 'träningsoverall för män') {
+          this.$router.push('/tracksuits')
+        } else if (query === 'klänningar för kvinnor') {
+          this.$router.push('/klänningar')
+        } else if (query === 'skor för kvinnor') {
+          this.$router.push('/skor')
+        } else if (query === 'jackor för kvinnor') {
+          this.$router.push('/womensjackets')
+        } else if (query === 'jeans för kvinnor') {
+          this.$router.push('/womensjeans')
+        } else {
+          console.log('Category not found')
+        }
+      },
+      updateDropdown() {
+        if (this.searchQuery.length > 0) {
+          this.showDropdown = true
+          this.filteredCategories = this.categories.filter((category) =>
+            category.toLowerCase().includes(this.searchQuery.toLowerCase())
+          )
+        } else {
+          this.showDropdown = false
+          this.filteredCategories = []
+        }
+      },
+      selectCategory(category) {
+        this.searchQuery = category
         this.showDropdown = false
-        this.filteredCategories = []
-      }
-    },
-    selectCategory(category) {
-      this.searchQuery = category
-      this.showDropdown = false
-    },
-
-
+      },
 
       maleFunction() {
         this.showManNav = !this.showManNav
@@ -83,14 +82,10 @@ import { mapGetters } from 'vuex';
 
 <template>
   <div class="bg-dark">
-
     <header>
-
-
-      <div class="p-3 text-center bg-dark border-bottom">
+      <div class="p-3 text-center bg-light border-bottom">
         <div class="container">
           <div class="row">
-
             <div
               class="col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
             >
@@ -98,7 +93,8 @@ import { mapGetters } from 'vuex';
                 <img src="Logo.png" height="35" />
               </a>
               <div
-              @click="$event.stopPropagation()" class="Man col-md-3 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
+                @click="$event.stopPropagation()"
+                class="Man col-md-3 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
               >
                 <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
                   <a class="nav-link" id="hover-man">
@@ -112,7 +108,8 @@ import { mapGetters } from 'vuex';
                 </li>
               </div>
               <div
-              @click="$event.stopPropagation()" class="col-md-2 w-auto my-autocol-md-1 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
+                @click="$event.stopPropagation()"
+                class="col-md-2 w-auto my-autocol-md-1 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
               >
                 <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
                   <a class="nav-link" id="hover-kvinna">
@@ -127,33 +124,45 @@ import { mapGetters } from 'vuex';
               </div>
             </div>
 
-
             <div class="col-md-4 position-relative">
-  <form @click="$event.stopPropagation()" class="d-flex input-group w-auto my-auto mb-3 mb-md-0" @submit.prevent="searchCategory">
-    <input
-      autocomplete="off"
-      type="search"
-      class="form-control rounded"
-      placeholder="Sök efter kategori"
-      v-model="searchQuery"
-      @input="updateDropdown"
-    />
-    <div v-if="showDropdown && filteredCategories.length" class="search-dropdown">
-      <ul class="list-group">
-        <li class="list-group-item" style="cursor: pointer;" v-for="category in filteredCategories" @click="selectCategory(category)">
-          {{ category }}
-        </li>
-      </ul>
-    </div>
-    <b-button squared variant="outline-secondary" type="submit">Sök</b-button>
-  </form>
-</div>
+              <form
+                @click="$event.stopPropagation()"
+                class="d-flex input-group w-auto my-auto mb-3 mb-md-0"
+                @submit.prevent="searchCategory"
+              >
+                <input
+                  autocomplete="off"
+                  type="search"
+                  class="form-control rounded"
+                  placeholder="Sök efter kategori"
+                  v-model="searchQuery"
+                  @input="updateDropdown"
+                />
+                <div
+                  v-if="showDropdown && filteredCategories.length"
+                  class="search-dropdown"
+                >
+                  <ul class="list-group">
+                    <li
+                      class="list-group-item"
+                      style="cursor: pointer"
+                      v-for="category in filteredCategories"
+                      @click="selectCategory(category)"
+                    >
+                      {{ category }}
+                    </li>
+                  </ul>
+                </div>
+                <b-button squared variant="outline-secondary" type="submit"
+                  >Sök</b-button
+                >
+              </form>
+            </div>
 
             <div
               class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center"
             >
-            <div class="d-flex">
-
+              <div class="d-flex">
                 <div>
                   <b-dropdown
                     size="lg"
@@ -168,15 +177,15 @@ import { mapGetters } from 'vuex';
                         alt=""
                         loading="lazy"
                       />
-                      <b-badge style="font-size: 10px" pill variant="danger"
-                        >{{ cartCount }}</b-badge
-                      >
+                      <b-badge style="font-size: 10px" pill variant="danger">{{
+                        cartCount
+                      }}</b-badge>
                     </template>
-<div>
-  <VaruKorg />
-</div>
+                    <div>
+                      <VaruKorg />
+                    </div>
                   </b-dropdown>
-                  </div>
+                </div>
 
                 <div>
                   <b-dropdown
@@ -199,24 +208,19 @@ import { mapGetters } from 'vuex';
                     <b-dropdown-item href="#">Logga ut</b-dropdown-item>
                   </b-dropdown>
                 </div>
-
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </header>
   </div>
   <header>
-
     <nav
       class="navbar navbar-expand-lg navbar-light bg-light"
       v-show="showKviNav"
     >
-
       <div class="container justify-content-center justify-content-md-between">
-
         <ul class="navbar-nav flex-row" @click="$event.stopPropagation()">
           <li class="nav-item me-2 me-lg-0">
             <a
@@ -246,18 +250,14 @@ import { mapGetters } from 'vuex';
             <RouterLink class="nav-link" to="/skor">Skor</RouterLink>
           </li>
         </ul>
-
       </div>
-
     </nav>
 
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white"
       v-show="showManNav"
     >
-
       <div class="container justify-content-center justify-content-md-between">
-
         <ul class="navbar-nav flex-row" @click="$event.stopPropagation()">
           <li class="nav-item me-2 me-lg-0">
             <a
@@ -287,10 +287,7 @@ import { mapGetters } from 'vuex';
             >
           </li>
         </ul>
-
       </div>
-
-
     </nav>
   </header>
   <div v-if="$route.path === '/!'">
@@ -299,11 +296,11 @@ import { mapGetters } from 'vuex';
 </template>
 
 <style scoped>
-.search-dropdown {
-  position: absolute;
-  z-index: 1;
-  top: calc(100% + 5px);
-  left: 0;
-  width: 100%;
-}
+  .search-dropdown {
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+  }
 </style>
