@@ -80,7 +80,7 @@
   }
 </script>
 
-<template>
+<template> // Referens Navbar : https://mdbootstrap.com/docs/standard/navigation/navbar/
   <div class="bg-dark">
     <header>
       <div class="p-3 text-center bg-light border-bottom">
