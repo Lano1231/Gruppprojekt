@@ -1,5 +1,6 @@
 <script>
-import VaruKorg from "./VaruKorg.vue"
+import VaruKorg from "./VaruKorg.vue";
+import { mapGetters } from 'vuex';
   export default {
     components: {VaruKorg},
     data() {
@@ -9,6 +10,9 @@ import VaruKorg from "./VaruKorg.vue"
         showLogNav: false
       }
     },
+    computed: {
+    ...mapGetters(['cart', 'total', 'cartCount'])
+  },
     methods: {
       maleFunction() {
         this.showManNav = !this.showManNav
@@ -80,6 +84,7 @@ import VaruKorg from "./VaruKorg.vue"
                   type="search"
                   class="form-control rounded"
                   placeholder="Sök efter artiklar"
+                  
                 />
                 <b-button squared variant="outline-secondary">Sök</b-button>
               </form>
@@ -108,7 +113,7 @@ import VaruKorg from "./VaruKorg.vue"
                         loading="lazy"
                       />
                       <b-badge style="font-size: 10px" pill variant="danger"
-                        >1</b-badge
+                        >{{ cartCount }}</b-badge
                       >
                     </template>
 <div @click="$event.stopPropagation()">
