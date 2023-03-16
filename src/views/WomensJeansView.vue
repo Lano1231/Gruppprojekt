@@ -7,7 +7,7 @@
         <p>{{ product.name }}</p>
         <p>{{ product.cost }} kr</p>
         <button class="btn-primary btn" @click="addProduct(product)">
-          Add to cart
+          Lägg Till i Varukorg
         </button></b-col
       >
     </b-row>
@@ -16,17 +16,17 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h4>About Us</h4>
+          <h4>Om oss</h4>
           <p>
-            We are a vintage clothing store dedicated to providing high-quality
-            clothing for men and women.
+            Vi är en vintageklädbutik som är dedikerad till att tillhandahålla hög kvalitet
+            kläder för män och kvinnor.
           </p>
         </div>
         <div class="col-md-6">
-          <h4>Contact Us</h4>
-          <p>Email: contact@sellit.com</p>
-          <p>Phone: 555-555-5555</p>
-          <p>Address: 123 Main St, Anytown USA</p>
+          <h4>Kontakta oss</h4>
+          <p>E-post: contact@sellit.com</p>
+          <p>Telefon: 555-555-5555</p>
+          <p>Adress: 123 Main St, Anytown USA</p>
         </div>
       </div>
     </div>

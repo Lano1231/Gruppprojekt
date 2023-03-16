@@ -1,15 +1,11 @@
 <script>
   export default {
-    props: {
-      // eslint-disable-next-line vue/require-default-prop
-      msg: String
-    }
+
   }
 </script>
 
 <template>
   <div class="container bg-dark">
-    <!-- position: relative; på föräldern. position: absolute; på barnet ("containing block") -->
     <b-row class="g-0">
       <b-col style="display: flex; position: relative">
         <div style="position: absolute; display: flex; align-self: center" />
@@ -37,11 +33,7 @@
         />
       </b-col>
     </b-row>
-    <!--
-    <div class="d-flex align-items-center justify-content-center">
 
-
-    </div> -->
   </div>
 
   <div>
@@ -55,8 +47,8 @@
         >
           <div class="parallax-text">
             <h1 bold>
-              Sell-IT is a website dedicated to vintage clothing for men and
-              women
+              Sell-IT är en webbplats dedikerad till vintagekläder för män och
+              kvinnor
             </h1>
           </div>
         </div>
@@ -68,17 +60,17 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h4>About Us</h4>
+          <h4>Om oss</h4>
           <p>
-            We are a vintage clothing store dedicated to providing high-quality
-            clothing for men and women.
+            Vi är en vintageklädbutik som är dedikerad till att tillhandahålla hög kvalitet
+            kläder för män och kvinnor.
           </p>
         </div>
         <div class="col-md-6">
-          <h4>Contact Us</h4>
-          <p>Email: contact@sellit.com</p>
-          <p>Phone: 555-555-5555</p>
-          <p>Address: 123 Main St, Anytown USA</p>
+          <h4>Kontakta oss</h4>
+          <p>E-post: contact@sellit.com</p>
+          <p>Telefon: 555-555-5555</p>
+          <p>Adress: 123 Main St, Anytown USA</p>
         </div>
       </div>
     </div>

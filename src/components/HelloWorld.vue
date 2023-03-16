@@ -83,14 +83,14 @@ import { mapGetters } from 'vuex';
 
 <template>
   <div class="bg-dark">
-    <!--Main Navigation-->
+
     <header>
-      <!-- Jumbotron -->
+
 
       <div class="p-3 text-center bg-dark border-bottom">
         <div class="container">
           <div class="row">
-            <!-- Left elements -->
+
             <div
               class="col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
             >
@@ -126,9 +126,8 @@ import { mapGetters } from 'vuex';
                 </li>
               </div>
             </div>
-            <!-- Left elements -->
 
-            <!-- Center elements -->
+
             <div class="col-md-4 position-relative">
   <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0" @submit.prevent="searchCategory">
     <input
@@ -149,15 +148,12 @@ import { mapGetters } from 'vuex';
     <b-button squared variant="outline-secondary" type="submit">Sök</b-button>
   </form>
 </div>
-            <!-- Center elements -->
-
-            <!-- Right elements -->
 
             <div
               class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center"
             >
             <div class="d-flex">
-                <!-- Cart -->
+
                 <div @click="$event.stopPropagation()">
                   <b-dropdown
                     size="lg"
@@ -198,32 +194,29 @@ import { mapGetters } from 'vuex';
                         loading="lazy"
                       />
                     </template>
-                    <b-dropdown-item :to="'/login'">My profile</b-dropdown-item>
-                    <b-dropdown-item href="#">Settings</b-dropdown-item>
-                    <b-dropdown-item href="#">Logout</b-dropdown-item>
+                    <b-dropdown-item :to="'/login'">Min Profil</b-dropdown-item>
+                    <b-dropdown-item href="#">Inställningar</b-dropdown-item>
+                    <b-dropdown-item href="#">Logga ut</b-dropdown-item>
                   </b-dropdown>
                 </div>
 
-                <!-- Notification -->
-
-                <!-- User -->
               </div>
             </div>
-            <!-- Right elements -->
+
           </div>
         </div>
       </div>
     </header>
   </div>
   <header>
-    <!--Main Navigation-->
+
     <nav
       class="navbar navbar-expand-lg navbar-light bg-light"
       v-show="showKviNav"
     >
-      <!-- Container wrapper -->
+
       <div class="container justify-content-center justify-content-md-between">
-        <!-- Left links -->
+
         <ul class="navbar-nav flex-row">
           <li class="nav-item me-2 me-lg-0">
             <a
@@ -253,18 +246,18 @@ import { mapGetters } from 'vuex';
             <RouterLink class="nav-link" to="/skor">Skor</RouterLink>
           </li>
         </ul>
-        <!-- Left links -->
+
       </div>
-      <!-- Container wrapper -->
+
     </nav>
 
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white"
       v-show="showManNav"
     >
-      <!-- Container wrapper -->
+
       <div class="container justify-content-center justify-content-md-between">
-        <!-- Left links -->
+
         <ul class="navbar-nav flex-row">
           <li class="nav-item me-2 me-lg-0">
             <a
@@ -294,10 +287,10 @@ import { mapGetters } from 'vuex';
             >
           </li>
         </ul>
-        <!-- Left links -->
+
       </div>
 
-      <!-- Container wrapper -->
+
     </nav>
   </header>
   <div v-if="$route.path === '/!'">

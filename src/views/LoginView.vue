@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-center">Log in</h1>
+  <h1 class="text-center">Logga in</h1>
 
   <b-container fluid>
     <b-row
@@ -23,7 +23,7 @@
   </b-container>
 
   <div class="d-flex justify-content-center mt-3">
-    <button class="btn-primary btn">Log in</button>
+    <button class="btn-primary btn">Logga in</button>
   </div>
 </template>
 
