@@ -5,10 +5,9 @@
       <RouterView />
     </main>
     <nav>
-      <router-link to="/landpage" v-if="showLandPage"></router-link>
-      <router-link to="/Kassa" v-if="showKassaLink"></router-link>
+      <router-link v-if="showLandPage && $route.path !== '/landpage'" to="/landpage"></router-link>
+      <router-link v-if="showKassaLink" to="/Kassa"></router-link>
     </nav>
-    <LandPage v-if="showLandPage && isMobileView" />
   </div>
 </template>
 
@@ -16,11 +15,6 @@
 import HelloWorld from './components/HelloWorld.vue';
 
 export default {
-  data() {
-    return {
-      isMobileView: true,
-    };
-  },
   components: {
     HelloWorld,
   },
@@ -32,11 +26,8 @@ export default {
       return this.$route.path !== '/Kassa';
     },
     showLandPage() {
-      return (
-        this.$route.path !== '/kassa' &&
-        this.$route.path !== '/login' &&
-        this.$route.path !== '/landpage'
-      );
+      const excludedPaths = ['/kassa', '/login', '/tracksuits', '/jeans', '/shirts', '/jackets', '/womensjeans' , '/klänningar' , '/womensjackets', '/skor'];
+      return !excludedPaths.includes(this.$route.path) || this.$route.path === '/landpage';
     },
   },
   watch: {
