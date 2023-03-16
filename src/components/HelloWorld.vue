@@ -2,7 +2,7 @@
 import VaruKorg from "./VaruKorg.vue";
 import { mapGetters } from 'vuex';
   export default {
-    components: {VaruKorg},
+    components: { VaruKorg },
     data() {
       return {
         showManNav: false,
@@ -30,12 +30,12 @@ import { mapGetters } from 'vuex';
 </script>
 
 <template>
-  <div class="bg-dark">
+  <div>
     <!--Main Navigation-->
     <header>
       <!-- Jumbotron -->
 
-      <div class="p-3 text-center bg-dark border-bottom">
+      <div class="p-3 text-center bg-light border-bottom">
         <div class="container">
           <div class="row">
             <!-- Left elements -->
@@ -84,7 +84,7 @@ import { mapGetters } from 'vuex';
                   type="search"
                   class="form-control rounded"
                   placeholder="Sök efter artiklar"
-                  
+
                 />
                 <b-button squared variant="outline-secondary">Sök</b-button>
               </form>
@@ -96,7 +96,7 @@ import { mapGetters } from 'vuex';
             <div
               class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center"
             >
-            <div class="d-flex">
+              <div class="d-flex">
                 <!-- Cart -->
                 <div @click="$event.stopPropagation()">
                   <b-dropdown
@@ -116,11 +116,11 @@ import { mapGetters } from 'vuex';
                         >{{ cartCount }}</b-badge
                       >
                     </template>
-<div @click="$event.stopPropagation()">
-  <VaruKorg />
-</div>
+                    <div @click="$event.stopPropagation()">
+                      <VaruKorg />
+                    </div>
                   </b-dropdown>
-                  </div>
+                </div>
 
                 <div>
                   <b-dropdown
