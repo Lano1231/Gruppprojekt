@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-
+import KassaView from './views/KassaView.vue'
 import LandPage from './components/LandPage.vue'
 import WomenDressView from './views/WomenDressView.vue'
 import JacketsView from './views/JacketsView.vue'
@@ -16,6 +16,10 @@ import TracksuitView from './views/TracksuitView.vue'
 export default createRouter({
   history: createWebHashHistory(),
   routes: [
+    {
+      component: KassaView,
+      path: '/Kassa'
+    },
     {
       component: WomenShoesView,
       path: '/skor'

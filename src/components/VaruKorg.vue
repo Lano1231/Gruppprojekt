@@ -1,12 +1,12 @@
 <template>
   <div style="min-width: 320px; right: 0; left: auto;" class="">
     <div class="px-2 ">
-      <h2>Varukorg <button class="btn btn-primary btn-sm" @click="clearCart">Töm varukorg</button></h2>
+      <h2 @click="$event.stopPropagation()">Varukorg <button class="btn btn-primary btn-sm" @click="clearCart">Töm varukorg</button></h2>
       <h2 style="font-size: medium;">{{ cartCount }} produkter i varukorg
         <p>Totala kostnad: {{ totalCost }} kr</p>
       </h2>
       <ul>
-        <li v-for="(product, index) in cart" :key="product.id">
+        <li v-for="(product, index) in cart" :key="product.id" @click="$event.stopPropagation()">
           <div class="item-image">
             <b-img :src="product.image" fluid alt="responsive image" style="width: 100px; height: auto;" />
           </div>
@@ -19,7 +19,7 @@
       </ul>
 
       <div v-if="cart.length > 0">
-        <button class="btn btn-success btn-lg" style="margin-top: 1rem;" @click="goToCheckout">Gå till kassa</button>
+        <RouterLink class="nav-link btn btn-success btn-lg" style="margin-top: 1rem;" to="/Kassa">Gå till kassa</RouterLink>
       </div>
     </div>
   </div>
@@ -38,7 +38,11 @@ export default {
     },
     clearCart() {
       this.$store.dispatch('clearCart');
-    }
+    },
+    checkout(){
+    this.$router.push("/Kassa");
+  },
   }
+
 };
 </script>

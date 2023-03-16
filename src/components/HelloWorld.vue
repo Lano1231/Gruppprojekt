@@ -154,7 +154,7 @@ import { mapGetters } from 'vuex';
             >
             <div class="d-flex">
 
-                <div @click="$event.stopPropagation()">
+                <div>
                   <b-dropdown
                     size="lg"
                     variant="link"
@@ -172,7 +172,7 @@ import { mapGetters } from 'vuex';
                         >{{ cartCount }}</b-badge
                       >
                     </template>
-<div @click="$event.stopPropagation()">
+<div>
   <VaruKorg />
 </div>
                   </b-dropdown>

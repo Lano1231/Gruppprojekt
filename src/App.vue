@@ -1,28 +1,52 @@
-<script>
-  import HelloWorld from './components/HelloWorld.vue'
-  import ShowName from './components/ShowName.vue'
+<template>
+  <div>
+    <HelloWorld v-if="showHelloWorld" />
+    <main>
+      <RouterView />
+    </main>
+    <nav>
+      <router-link to="/landpage" v-if="showLandPage"></router-link>
+      <router-link to="/Kassa" v-if="showKassaLink"></router-link>
+    </nav>
+    <LandPage v-if="showLandPage && isMobileView" />
+  </div>
+</template>
 
-  export default {
-    data: () => {
-      return {
-        mobileView: true
+<script>
+import HelloWorld from './components/HelloWorld.vue';
+
+export default {
+  data() {
+    return {
+      isMobileView: true,
+    };
+  },
+  components: {
+    HelloWorld,
+  },
+  computed: {
+    showHelloWorld() {
+      return this.$route.path !== '/Kassa';
+    },
+    showKassaLink() {
+      return this.$route.path !== '/Kassa';
+    },
+    showLandPage() {
+      return (
+        this.$route.path !== '/kassa' &&
+        this.$route.path !== '/login' &&
+        this.$route.path !== '/landpage'
+      );
+    },
+  },
+  watch: {
+    $route(to) {
+      if (to.path === '/Kassa') {
+        this.isMobileView = false;
+      } else {
+        this.isMobileView = true;
       }
     },
-    components: {
-      HelloWorld,
-      ShowName
-    }
-  }
+  },
+};
 </script>
-
-<template>
-  <HelloWorld />
-
-  <main>
-    <RouterView />
-  </main>
-
-  <ShowName />
-
-  <LandPage v-if="!mobileView" />
-</template>
