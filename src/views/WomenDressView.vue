@@ -1,8 +1,8 @@
 <template>
-  <h1 class="text-center">Jackor</h1>
+  <h1 class="text-center">Klänningar (Kvinna)</h1>
   <b-container class="bv-example-row bv-example-row-flex-cols">
     <b-row class="text-center products" align-v="stretch">
-      <b-col cols="3" v-for="product in JacketsProducts" :key="product.id">
+      <b-col cols="3" v-for="product in WomensDressProducts" :key="product.id">
         <b-img :src="product.image" fluid alt="responsive image" />
         <p>{{ product.name }}</p>
         <p>{{ product.cost }} kr</p>
@@ -34,12 +34,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex'
   export default {
     data() {
       return {}},
       computed: {
-     ...mapGetters(['JacketsProducts'])
+     ...mapGetters(['WomensDressProducts'])
   },
 
   methods: {

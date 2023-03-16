@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-center">Jackor</h1>
+  <h1 class="text-center">Jackor (Kvinna)</h1>
   <b-container class="bv-example-row bv-example-row-flex-cols">
     <b-row class="text-center products" align-v="stretch">
       <b-col cols="3" v-for="product in WomensJacketsProducts" :key="product.id">

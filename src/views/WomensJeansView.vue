@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-center">Jeans</h1>
+  <h1 class="text-center">Jeans (Kvinna)</h1>
   <b-container class="bv-example-row bv-example-row-flex-cols">
     <b-row class="text-center products" align-v="stretch">
       <b-col cols="3" v-for="product in WomensJeansProducts" :key="product.id">
@@ -37,6 +37,8 @@
 import { mapGetters } from 'vuex'
 
   export default {
+    data() {
+      return {}},
       computed: {
      ...mapGetters(['WomensJeansProducts'])
   },

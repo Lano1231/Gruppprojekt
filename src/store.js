@@ -5,6 +5,7 @@ const store = createStore({
   state: {
     cart: [],
     total: 0,
+    searchQuery:"",
     products: [
       {
         id: 1,
@@ -547,7 +548,8 @@ const store = createStore({
     },
     SET_CART(state, cart) {
       state.cart = cart;
-    }
+    },
+
   },
   actions: {
     addProduct({ commit, getters }, product) {

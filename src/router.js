@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import LandPage from './components/LandPage.vue'
-import WomenClothesView from './views/WomenClothesView.vue'
-import ContactView from './views/ContactView.vue'
+import WomenDressView from './views/WomenDressView.vue'
+import JacketsView from './views/JacketsView.vue'
 import HomeView from './views/HomeView.vue'
 import ShirtView from './views/ShirtView.vue'
 import JeansView from './views/JeansView.vue'
@@ -25,15 +25,15 @@ export default createRouter({
       path: '/womensjackets'
     },
     {
-      component: WomenClothesView,
+      component: WomenDressView,
       path: '/klänningar'
     },
     {
       component: WomensJeansView,
-      path: '/WomensJeans'
+      path: '/womensjeans'
     },
     {
-      component: ContactView,
+      component: JacketsView,
       path: '/jackets'
     },
     {

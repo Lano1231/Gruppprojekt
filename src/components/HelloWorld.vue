@@ -7,13 +7,65 @@ import { mapGetters } from 'vuex';
       return {
         showManNav: false,
         showKviNav: false,
-        showLogNav: false
-      }
-    },
-    computed: {
+        showLogNav: false,
+        searchQuery: '',
+        categories: [
+        'jeans för män',
+        'jackor för män',
+        'skjortor för män',
+        'träningsoverall för mön',
+        'klänningar för kvinnor',
+        'skor för kvinnor',
+        'jackor för kvinnor',
+        'jeans för kvinnor'
+      ],
+      showDropdown: false,
+      filteredCategories: []
+    }
+  },
+  computed: {
     ...mapGetters(['cart', 'total', 'cartCount'])
   },
-    methods: {
+  methods: {
+    searchCategory() {
+      const query = this.searchQuery.toLowerCase()
+      if (query === 'jeans för män') {
+        this.$router.push('/jeans')
+      } else if (query === 'jackor för män') {
+        this.$router.push('/jackets')
+      } else if (query === 'skjortor för män') {
+        this.$router.push('/shirts')
+      } else if (query === 'träningsoverall för män') {
+        this.$router.push('/tracksuits')
+      } else if (query === 'klänningar för kvinnor') {
+        this.$router.push('/klänningar')
+      } else if (query === 'skor för kvinnor') {
+        this.$router.push('/skor')
+      } else if (query === 'jackor för kvinnor') {
+        this.$router.push('/womensjackets')
+      } else if (query === 'jeans för kvinnor') {
+        this.$router.push('/womensjeans')
+      }
+      else {
+        console.log('Category not found')
+      }
+    },
+    updateDropdown() {
+      if (this.searchQuery.length > 0) {
+        this.showDropdown = true
+        this.filteredCategories = this.categories.filter(category => category.toLowerCase().includes(this.searchQuery.toLowerCase()))
+      } else {
+        this.showDropdown = false
+        this.filteredCategories = []
+      }
+    },
+    selectCategory(category) {
+      this.searchQuery = category
+      this.showDropdown = false
+    },
+
+
+
       maleFunction() {
         this.showManNav = !this.showManNav
         this.showKviNav = false
@@ -77,18 +129,26 @@ import { mapGetters } from 'vuex';
             <!-- Left elements -->
 
             <!-- Center elements -->
-            <div class="col-md-4">
-              <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
-                <input
-                  autocomplete="off"
-                  type="search"
-                  class="form-control rounded"
-                  placeholder="Sök efter artiklar"
-                  
-                />
-                <b-button squared variant="outline-secondary">Sök</b-button>
-              </form>
-            </div>
+            <div class="col-md-4 position-relative">
+  <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0" @submit.prevent="searchCategory">
+    <input
+      autocomplete="off"
+      type="search"
+      class="form-control rounded"
+      placeholder="Sök efter kategori"
+      v-model="searchQuery"
+      @input="updateDropdown"
+    />
+    <div v-if="showDropdown && filteredCategories.length" class="search-dropdown">
+      <ul class="list-group">
+        <li class="list-group-item" v-for="category in filteredCategories" @click="selectCategory(category)">
+          {{ category }}
+        </li>
+      </ul>
+    </div>
+    <b-button squared variant="outline-secondary" type="submit">Sök</b-button>
+  </form>
+</div>
             <!-- Center elements -->
 
             <!-- Right elements -->
@@ -244,3 +304,13 @@ import { mapGetters } from 'vuex';
     <LandPage />
   </div>
 </template>
+
+<style scoped>
+.search-dropdown {
+  position: absolute;
+  z-index: 1;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+}
+</style>
