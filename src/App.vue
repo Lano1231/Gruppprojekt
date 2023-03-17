@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HelloWorld v-if="showHelloWorld" />
+    <NavBar v-if="showNavBar" />
     <main>
       <RouterView />
     </main>
@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import NavBar from './components/NavBar.vue';
 
 export default {
   components: {
-    HelloWorld,
+    NavBar,
   },
   computed: {
-    showHelloWorld() {
+    showNavBar() {
       return this.$route.path !== '/Kassa';
     },
     showKassaLink() {
