@@ -83,7 +83,6 @@
 <template>
   <div class="bg-dark">
     <header>
-      <div>a</div>
       <div class="p-3 text-center bg-light border-bottom">
         <div class="container">
           <div class="row">
@@ -148,6 +147,7 @@
                       class="list-group-item"
                       style="cursor: pointer"
                       v-for="category in filteredCategories"
+                      :key="category"
                       @click="selectCategory(category)"
                     >
                       {{ category }}
