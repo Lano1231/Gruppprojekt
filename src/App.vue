@@ -1,9 +1,9 @@
 <template>
   <div>
-    <HelloWorld v-if="showHelloWorld" />
+    <NavBar v-if="showNavBar" />
     <main>
       <RouterView />
-      <chat />
+      <Chat />
     </main>
     <nav>
       <router-link
@@ -16,46 +16,50 @@
 </template>
 
 <script>
-  import HelloWorld from './components/HelloWorld.vue'
+  import NavBar from './components/NavBar.vue'
   import Chat from './components/ChatChat.vue'
-
   export default {
     components: {
-      HelloWorld,
+      NavBar,
       Chat
     },
     computed: {
-      showHelloWorld() {
+      showNavBar() {
         return this.$route.path !== '/Kassa'
       },
-      showKassaLink() {
-        return this.$route.path !== '/Kassa'
+      computed: {
+        showHelloWorld() {
+          return this.$route.path !== '/Kassa'
+        },
+        showKassaLink() {
+          return this.$route.path !== '/Kassa'
+        },
+        showLandPage() {
+          const excludedPaths = [
+            '/kassa',
+            '/login',
+            '/tracksuits',
+            '/jeans',
+            '/shirts',
+            '/jackets',
+            '/womensjeans',
+            '/klänningar',
+            '/womensjackets',
+            '/skor'
+          ]
+          return (
+            !excludedPaths.includes(this.$route.path) ||
+            this.$route.path === '/landpage'
+          )
+        }
       },
-      showLandPage() {
-        const excludedPaths = [
-          '/kassa',
-          '/login',
-          '/tracksuits',
-          '/jeans',
-          '/shirts',
-          '/jackets',
-          '/womensjeans',
-          '/klänningar',
-          '/womensjackets',
-          '/skor'
-        ]
-        return (
-          !excludedPaths.includes(this.$route.path) ||
-          this.$route.path === '/landpage'
-        )
-      }
-    },
-    watch: {
-      $route(to) {
-        if (to.path === '/Kassa') {
-          this.isMobileView = false
-        } else {
-          this.isMobileView = true
+      watch: {
+        $route(to) {
+          if (to.path === '/Kassa') {
+            this.isMobileView = false
+          } else {
+            this.isMobileView = true
+          }
         }
       }
     }
