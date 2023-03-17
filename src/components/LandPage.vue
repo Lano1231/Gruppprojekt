@@ -31,7 +31,7 @@
             position: absolute;
             display: flex;
             align-self: center;
-            padding: 5%;
+            padding: 6%;
           "
         />
         <b-img
