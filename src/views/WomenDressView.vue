@@ -4,6 +4,10 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-..."
   />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
 
   <div class="container">
     <h1 class="text-center">Klänningar (Kvinna)</h1>
@@ -22,8 +26,14 @@
           <p>{{ product.cost }} kr</p>
           <button class="btn-primary btn" @click="addProduct(product)">
             Lägg Till i Varukorg
-          </button></b-col
-        >
+          </button>
+          <button
+            class="like-button"
+            :class="{ liked: product.liked }"
+            @click="likeProduct(product)"
+          >
+            <i class="fa fa-heart" /></button
+        ></b-col>
       </b-row>
     </b-container>
     <footer class="bg-light text-center text-white">
@@ -116,6 +126,14 @@
       clearCart() {
         this.$store.dispatch('clearCart')
         localStorage.removeItem('cart')
+      },
+
+      likeProduct(product) {
+        product.liked = !product.liked
+        this.$store.dispatch(
+          'setLikedProducts',
+          this.WomensDressProducts.filter((p) => p.liked)
+        )
       }
     },
     created() {

@@ -205,7 +205,9 @@
                       />
                     </template>
                     <b-dropdown-item :to="'/login'">Min Profil</b-dropdown-item>
-                    <b-dropdown-item href="#">Inställningar</b-dropdown-item>
+                    <b-dropdown-item :to="'/likes'"
+                      >Gillade Produkter</b-dropdown-item
+                    >
                     <b-dropdown-item href="#">Logga ut</b-dropdown-item>
                   </b-dropdown>
                 </div>

@@ -1,16 +1,17 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
-import KassaView from './views/KassaView.vue';
-import WomenDressView from './views/WomenDressView.vue';
-import JacketsView from './views/JacketsView.vue';
+import { createRouter, createWebHashHistory } from 'vue-router'
+import KassaView from './views/KassaView.vue'
+import WomenDressView from './views/WomenDressView.vue'
+import JacketsView from './views/JacketsView.vue'
 
-import ShirtView from './views/ShirtView.vue';
-import JeansView from './views/JeansView.vue';
-import WomensJeansView from './views/WomensJeansView.vue';
-import WomensJacketsView from './views/WomensJacketsView.vue';
-import WomenShoesView from './views/WomenShoesView.vue';
-import LoginView from './views/LoginView.vue';
-import TracksuitView from './views/TracksuitView.vue';
-import LandPage from './components/LandPage.vue';
+import ShirtView from './views/ShirtView.vue'
+import JeansView from './views/JeansView.vue'
+import WomensJeansView from './views/WomensJeansView.vue'
+import WomensJacketsView from './views/WomensJacketsView.vue'
+import WomenShoesView from './views/WomenShoesView.vue'
+import LoginView from './views/LoginView.vue'
+import TracksuitView from './views/TracksuitView.vue'
+import LandPage from './components/LandPage.vue'
+import LikesView from './views/LikesView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -57,13 +58,17 @@ export default createRouter({
       path: '/login'
     },
 
-     {
-       component: LandPage,
-       path: '/landpage'
-     },
-     {
+    {
+      component: LandPage,
+      path: '/landpage'
+    },
+    {
+      component: LikesView,
+      path: '/likes'
+    },
+    {
       component: LandPage,
       path: '/'
     }
   ]
-});
+})
