@@ -15,6 +15,12 @@
           <b-img :src="product.image" fluid alt="responsive image" />
           <p>{{ product.name }}</p>
           <p>{{ product.cost }} kr</p>
+          <p>
+            Välj en storlek
+            <select v-model="selected">
+              <option>{{ product.size }}</option>
+            </select>
+          </p>
           <button class="btn-primary btn" @click="addProduct(product)">
             Lägg Till i Varukorg
           </button></b-col
