@@ -8,6 +8,7 @@
       <input type="password" class="input" v-model="password" />
       <button class="button" @click="login">Login</button>
     </div>
+
     <div v-else>
       <p class="welcome">You are logged in as {{ username }}</p>
 
@@ -44,6 +45,11 @@
       </div>
       <button class="button" @click="logout">Logout</button>
     </div>
+  </div>
+  <div>
+    <router-link :to="'/password'"
+      ><button>Glömt lösenordet?</button></router-link
+    >
   </div>
 </template>
 
@@ -86,14 +92,13 @@
           email: this.email,
           rating: this.rating,
           review: this.review
-
         }
-        console.log(review);
-      // Clear the form fields
-      this.name = '';
-      this.email = '';
-      this.rating = '';
-      this.review = '';
+        console.log(review)
+        // Clear the form fields
+        this.name = ''
+        this.email = ''
+        this.rating = ''
+        this.review = ''
       }
     }
   }

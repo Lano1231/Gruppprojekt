@@ -13,6 +13,7 @@ import TracksuitView from './views/TracksuitView.vue'
 import LandPage from './components/LandPage.vue'
 import LikesView from './views/LikesView.vue'
 import RegisterView from './views/RegisterView.vue'
+import PasswordView from './views/PAsswordView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -74,6 +75,10 @@ export default createRouter({
     {
       component: RegisterView,
       path: '/register'
+    },
+    {
+      component: PasswordView,
+      path: '/password'
     }
   ]
 })

@@ -4,7 +4,7 @@
     <label for="name">Namn:</label>
     <input type="text" v-model="namn" />
 
-    <label for="email">E-Mejl::</label>
+    <label for="email">e-mail:</label>
     <input type="email" v-model="emejl" />
 
     <label for="password">Lösenord:</label>
@@ -13,7 +13,7 @@
     <button @click="register">Registera dig</button>
   </form>
   <div v-if="submitted">
-    <h2>Välkommen som ny kund {{ namn }} !</h2>
+    <h2>Nu kan du handla hos oss {{ namn }}!</h2>
   </div>
 </template>
 
