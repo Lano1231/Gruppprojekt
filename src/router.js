@@ -12,6 +12,7 @@ import LoginView from './views/LoginView.vue'
 import TracksuitView from './views/TracksuitView.vue'
 import LandPage from './components/LandPage.vue'
 import LikesView from './views/LikesView.vue'
+import RegisterView from './views/RegisterView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -69,6 +70,10 @@ export default createRouter({
     {
       component: LandPage,
       path: '/'
+    },
+    {
+      component: RegisterView,
+      path: '/register'
     }
   ]
 })

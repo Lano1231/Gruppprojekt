@@ -10,7 +10,6 @@ import store from './store'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-next/dist/bootstrap-vue-next.css'
 
-
 // const firebaseConfig = {
 //   apiKey: 'AIzaSyBFXQnGAQ07dJbo-nGMHoMBYLT5S2MWUi0',
 //   authDomain: 'group-project23.firebaseapp.com',

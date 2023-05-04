@@ -20,7 +20,8 @@
           'jeans för kvinnor'
         ],
         showDropdown: false,
-        filteredCategories: []
+        filteredCategories: [],
+        valdValuta: 'Välj valuta'
       }
     },
     computed: {
@@ -163,6 +164,16 @@
             <div
               class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center"
             >
+              <div>
+                <select v-model="valdValuta" id="valuta">
+                  <option for="valdValuta">Välj valuta</option>
+                  <option value="SEK">SEK</option>
+                  <option value="EUR">EUR</option>
+                  <option value="NOK">NOK</option>
+                  <option value="DKK">DKK</option>
+                </select>
+                <p>Du har valt att handla med {{ valdValuta }}</p>
+              </div>
               <div class="d-flex">
                 <div>
                   <b-dropdown
@@ -205,6 +216,9 @@
                       />
                     </template>
                     <b-dropdown-item :to="'/login'">Min Profil</b-dropdown-item>
+                    <b-dropdown-item :to="'/register'"
+                      >Registrera dig</b-dropdown-item
+                    >
                     <b-dropdown-item :to="'/likes'"
                       >Gillade Produkter</b-dropdown-item
                     >

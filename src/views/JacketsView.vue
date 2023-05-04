@@ -12,15 +12,16 @@
     >
       <b-row class="text-center products" align-v="stretch">
         <b-col cols="6" v-for="product in JacketsProducts" :key="product.id">
-          <b-img :src="product.image" fluid alt="responsive image" />
+          <b-img :src="product.images[0]" fluid alt="responsive image" />
           <p>{{ product.name }}</p>
           <p>{{ product.cost }} kr</p>
-          <p>
-            Välj en storlek
-            <select v-model="selected">
-              <option>{{ product.size }}</option>
-            </select>
-          </p>
+          <p>Välj storlek</p>
+          <select v-model="selectedSize">
+            <option>{{ product.sizes[0] }}</option>
+            <option>{{ product.sizes[1] }}</option>
+            <option>{{ product.sizes[2] }}</option>
+            <option>{{ product.sizes[3] }}</option>
+          </select>
           <button class="btn-primary btn" @click="addProduct(product)">
             Lägg Till i Varukorg
           </button></b-col
