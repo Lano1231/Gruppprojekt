@@ -7,9 +7,25 @@
       </button>
     </div>
     <div v-show="showChat" class="chat-body" ref="chatBody">
-      <div v-for="(message, index) in messages" :key="index" class="message">
-        <div class="mdlkrop">{{ message.text }}</div>
+      <div
+        v-for="(message, index) in filteredMessages"
+        :key="index"
+        class="message"
+      >
+        <div class="mdlkrop">
+          {{ message.text }}
+          <div v-if="message.replyTo" class="reply-message">
+            Till: {{ getReplyMessageText(message.replyTo) }}
+          </div>
+        </div>
         <div class="mdltid">{{ message.time }}</div>
+        <button
+          v-if="!message.replyTo"
+          class="btn btn-reply"
+          @click="setReplyingTo(message.id)"
+        >
+          Svara
+        </button>
       </div>
       <form @submit.prevent="sendMessage" class="form-send">
         <input
@@ -20,22 +36,55 @@
         />
         <button type="submit" class="btn btn-primary btn-send">Skicka</button>
       </form>
+      <input
+        type="text"
+        v-model="searchQuery"
+        placeholder="Sök efter ett specifikt meddelande!"
+        class="form-control"
+      />
     </div>
   </div>
 </template>
+
 <script>
   export default {
     data() {
       return {
         showChat: false,
         messages: [
-          { text: 'Hej, mitt namn är Lano', time: '2 minuter sedan' },
-          { text: 'Vad kan jag hjälpa dig med idag?', time: '1 minut sedan' },
-          { text: 'Hör av dig om du har någon fråga :)', time: '1 minut sedan' }
+          {
+            id: this.generateUniqueId(),
+            text: 'Hej, mitt namn är Lano',
+            time: '2 minuter sedan'
+          },
+          {
+            id: this.generateUniqueId(),
+            text: 'Vad kan jag hjälpa dig med idag?',
+            time: '1 minut sedan'
+          },
+          {
+            id: this.generateUniqueId(),
+            text: 'Hör av dig om du har någon fråga :)',
+            time: '1 minut sedan'
+          }
         ],
         newMessage: '',
         toggleText: 'Vi är här för att hjälpa dig',
-        firstMessageSent: false
+        firstMessageSent: false,
+        replyingTo: null,
+        searchQuery: ''
+      }
+    },
+    computed: {
+      filteredMessages() {
+        if (this.searchQuery.trim() === '') {
+          return this.messages
+        } else {
+          const query = this.searchQuery.trim().toLowerCase()
+          return this.messages.filter((message) =>
+            message.text.toLowerCase().includes(query)
+          )
+        }
       }
     },
     methods: {
@@ -49,12 +98,15 @@
       sendMessage() {
         if (this.newMessage.trim() !== '') {
           const message = {
+            id: this.generateUniqueId(),
             text: this.newMessage,
-            time: new Date().toLocaleTimeString()
+            time: new Date().toLocaleTimeString(),
+            replyTo: this.replyingTo
           }
           this.messages.push(message)
           if (!this.firstMessageSent) {
             const botMessage = {
+              id: this.generateUniqueId(),
               text: 'Återkommer strax!',
               time: new Date().toLocaleTimeString()
             }
@@ -62,6 +114,7 @@
             this.firstMessageSent = true
           }
           this.newMessage = ''
+          this.replyingTo = null
           this.scrollChat()
         }
       },
@@ -72,6 +125,19 @@
         if (chatBody.clientHeight < chatBody.scrollHeight) {
           chatContainer.scrollTop = chatBody.scrollHeight
         }
+      },
+      generateUniqueId() {
+        return Math.random().toString(36).substr(2, 9)
+      },
+      setReplyingTo(messageId) {
+        this.replyingTo = messageId
+        this.scrollChat()
+      },
+      getReplyMessageText(messageId) {
+        const replyMessage = this.messages.find(
+          (message) => message.id === messageId
+        )
+        return replyMessage ? replyMessage.text : ''
       }
     },
     mounted() {
