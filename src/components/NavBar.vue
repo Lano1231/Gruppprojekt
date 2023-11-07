@@ -25,8 +25,9 @@
       }
     },
     computed: {
-      ...mapGetters(['cart', 'total', 'cartCount'])
+      ...mapGetters(['cart', 'total', 'cartCount', 'currentCurrency'])
     },
+
     methods: {
       searchCategory() {
         const query = this.searchQuery.toLowerCase()
@@ -49,6 +50,9 @@
         } else {
           console.log('Category not found')
         }
+      },
+      setCurrency() {
+        this.$store.commit('SET_CURRENCY', this.valdValuta)
       },
       updateDropdown() {
         if (this.searchQuery.length > 0) {
@@ -165,14 +169,14 @@
               class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center"
             >
               <div>
-                <select v-model="valdValuta" id="valuta">
+                <select v-model="valdValuta" id="valuta" @change="setCurrency">
                   <option for="valdValuta">Välj valuta</option>
                   <option value="SEK">SEK</option>
                   <option value="EUR">EUR</option>
                   <option value="NOK">NOK</option>
                   <option value="DKK">DKK</option>
                 </select>
-                <p>Du har valt att handla med {{ valdValuta }}</p>
+                <p>Du har valt att handla med {{ currentCurrency }}</p>
               </div>
               <div class="d-flex">
                 <div>

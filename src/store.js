@@ -3,9 +3,16 @@ import { createStore } from 'vuex'
 const store = createStore({
   state: {
     cart: [],
+    conversionRates: {
+      SEK: 1,
+      NOK: 1.02,
+      EUR: 0.086,
+      DKK: 0.64
+    },
     total: 0,
     searchQuery: '',
     likedProducts: [],
+    selectedCurency: 'SEK',
     products: [
       {
         id: 1,
@@ -553,6 +560,9 @@ const store = createStore({
     ]
   },
   mutations: {
+    SET_CURRENCY(state, currency) {
+      state.selectedCurrency = currency
+    },
     ADD_PRODUCT(state, product) {
       const index = state.cart.findIndex((p) => p.id === product.id)
       if (index === -1) {
@@ -598,14 +608,22 @@ const store = createStore({
     }
   },
   getters: {
+    conversionRate(state, getters) {
+      return state.conversionRates[getters.currentCurrency]
+    },
+    currentCurrency(state) {
+      return state.selectedCurrency
+    },
     cart: (state) => state.cart,
     cartCount: (state) =>
       state.cart.reduce((total, product) => {
         return total + product.quantity
       }, 0),
-    totalCost: (state) => {
+    totalCost(state, getters) {
       return state.cart.reduce((total, product) => {
-        return total + Number(product.cost) * product.quantity
+        const convertedPrice =
+          Number(product.cost) * product.quantity * getters.conversionRate
+        return total + convertedPrice
       }, 0)
     },
     likedProducts: (state) => {
