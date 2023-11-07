@@ -10,14 +10,14 @@
     <div class="container">
       <div class="py-5 text-center">
         <a href="#!">
-        <img
-          class="d-block mx-auto mb-4"
-          src="logo.png"
-          alt=""
-          width="200"
-          height="72"
-        />
-      </a>
+          <img
+            class="d-block mx-auto mb-4"
+            src="logo.png"
+            alt=""
+            width="200"
+            height="72"
+          />
+        </a>
         <h2>Kassa</h2>
       </div>
       <div class="row">
@@ -202,89 +202,182 @@
             <hr class="mb-4" />
             <h4 class="mb-3">Betalnings sätt</h4>
             <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input
-                  id="credit"
-                  name="paymentMethod"
-                  type="radio"
-                  class="custom-control-input"
-                  checked=""
-                  required=""
-                />
-                <label class="custom-control-label" for="credit"
-                  >Kredit kort</label
+              <div>
+                <div
+                  class="custom-control custom-radio"
+                  @click="selectPaymentMethod('credit')"
                 >
-              </div>
-              <div class="custom-control custom-radio">
-                <input
-                  id="debit"
-                  name="paymentMethod"
-                  type="radio"
-                  class="custom-control-input"
-                  required=""
-                />
-                <label class="custom-control-label" for="debit"
-                  >Debit kort</label
+                  <input
+                    id="credit"
+                    name="paymentMethod"
+                    type="radio"
+                    class="custom-control-input"
+                    :checked="selectedPaymentMethod === 'credit'"
+                    required
+                  />
+                  <label class="custom-control-label" for="credit"
+                    >Kredit kort</label
+                  >
+                </div>
+                <div
+                  class="custom-control custom-radio"
+                  @click="selectPaymentMethod('debit')"
                 >
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="cc-name">Namn på kortet</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cc-name"
-                  placeholder=""
-                  required=""
-                />
-                <small class="text-muted"
-                  >Fullständigt namn som visas på kortet</small
+                  <input
+                    id="debit"
+                    name="paymentMethod"
+                    type="radio"
+                    class="custom-control-input"
+                    :checked="selectedPaymentMethod === 'debit'"
+                    required
+                  />
+                  <label class="custom-control-label" for="debit"
+                    >Debit kort</label
+                  >
+                </div>
+                <div
+                  class="custom-control custom-radio"
+                  @click="selectPaymentMethod('gift-card')"
                 >
-                <div class="invalid-feedback">
-                  Namn på kortet är nodvändigt.
+                  <input
+                    id="gift-card"
+                    name="paymentMethod"
+                    type="radio"
+                    class="custom-control-input"
+                    :checked="selectedPaymentMethod === 'gift-card'"
+                    required
+                  />
+                  <label class="custom-control-label" for="gift-card"
+                    >Present kort</label
+                  >
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="cc-number">kredit kort nummer</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cc-number"
-                  placeholder=""
-                  required=""
-                />
-                <div class="invalid-feedback">
-                  Kredit kort nummer är nödvändigt.
+              <div v-if="isGiftCardSelected && totalCost < 1000">
+                <h4 class="mb-3">Välj ett presentkort</h4>
+                <div
+                  class="custom-control custom-radio"
+                  @click="selectGiftCard(200)"
+                >
+                  <input
+                    id="gift-card-1"
+                    name="giftCardOption"
+                    type="radio"
+                    class="custom-control-input"
+                    required=""
+                    :checked="selectedGiftCardValue === 200"
+                    :disabled="totalCost > 200"
+                  />
+                  <label class="custom-control-label" for="gift-card-1"
+                    >200 kr</label
+                  >
+                </div>
+                <div
+                  class="custom-control custom-radio"
+                  @click="selectGiftCard(500)"
+                >
+                  <input
+                    id="gift-card-2"
+                    name="giftCardOption"
+                    type="radio"
+                    class="custom-control-input"
+                    required=""
+                    :checked="selectedGiftCardValue === 500"
+                    :disabled="totalCost > 500"
+                  />
+                  <label class="custom-control-label" for="gift-card-2"
+                    >500 kr</label
+                  >
+                </div>
+                <div
+                  class="custom-control custom-radio"
+                  @click="selectGiftCard(1000)"
+                >
+                  <input
+                    id="gift-card-3"
+                    name="giftCardOption"
+                    type="radio"
+                    class="custom-control-input"
+                    required=""
+                    :checked="selectedGiftCardValue === 1000"
+                    :disabled="totalCost > 1000"
+                  />
+                  <label class="custom-control-label" for="gift-card-3"
+                    >1000 kr</label
+                  >
+                </div>
+
+                <div
+                  v-if="isGiftCardSelected && totalCost > selectedGiftCardValue"
+                >
+                  <div class="alert alert-danger" role="alert">
+                    Dina varor överstiger värdet av vissa presentkort
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Utgångsdatum</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cc-expiration"
-                  placeholder=""
-                  required=""
-                />
-                <div class="invalid-feedback">Utgångsdatum är nödvändig.</div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="cc-name">Namn på kortet</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-name"
+                    placeholder=""
+                    required=""
+                  />
+                  <small class="text-muted"
+                    >Fullständigt namn som visas på kortet</small
+                  >
+                  <div class="invalid-feedback">
+                    Namn på kortet är nodvändigt.
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cc-number">kredit kort nummer</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-number"
+                    placeholder=""
+                    required=""
+                  />
+                  <div class="invalid-feedback">
+                    Kredit kort nummer är nödvändigt.
+                  </div>
+                </div>
               </div>
-              <div class="col-md-3 mb-3">
-                <label for="cc-cvv">CVV</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cc-cvv"
-                  placeholder=""
-                  required=""
-                />
-                <div class="invalid-feedback">Säkerhetskoden är nödvändig.</div>
-                <hr class="mb-4" />
-                <button class="btn btn-success btn-lg btn-block" type="submit">
-                  Betala för dina produkter!
-                </button>
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="cc-expiration">Utgångsdatum</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-expiration"
+                    placeholder=""
+                    required=""
+                  />
+                  <div class="invalid-feedback">Utgångsdatum är nödvändig.</div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="cc-cvv">CVV</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-cvv"
+                    placeholder=""
+                    required=""
+                  />
+                  <div class="invalid-feedback">
+                    Säkerhetskoden är nödvändig.
+                  </div>
+                  <hr class="mb-4" />
+                  <button
+                    class="btn btn-success btn-lg btn-block"
+                    type="submit"
+                  >
+                    Betala för dina produkter!
+                  </button>
+                </div>
               </div>
             </div>
           </form>
@@ -367,7 +460,16 @@
 
   export default {
     computed: {
-      ...mapGetters(['cart', 'totalCost', 'cartCount'])
+      ...mapGetters(['cart', 'totalCost', 'cartCount']),
+      isGiftCardSelected() {
+        return this.selectedPaymentMethod === 'gift-card'
+      }
+    },
+    data() {
+      return {
+        selectedPaymentMethod: 'credit',
+        selectedGiftCardValue: 0
+      }
     },
     methods: {
       removeProduct(index) {
@@ -378,23 +480,14 @@
       },
       checkout() {
         this.$router.push('/Kassa')
+      },
+      selectPaymentMethod(method) {
+        this.selectedPaymentMethod = method
+        this.selectedGiftCardValue = 0
+      },
+      selectGiftCard(value) {
+        this.selectedGiftCardValue = value
       }
     }
   }
-  ;(function () {
-    var forms = document.querySelectorAll('.needs-validation')
-    Array.prototype.filter.call(forms, function (form) {
-      form.addEventListener(
-        'submit',
-        function (event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-          form.classList.add('was-validated')
-        },
-        false
-      )
-    })
-  })()
 </script>
